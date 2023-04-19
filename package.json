@@ -1,0 +1,7 @@
+{
+	"name": "dwarf-unity",
+	"version": "0.0.1",
+	"description": "This project contains a collection of shared packages for Unity",
+	"displayName": "Dwarf Unity",
+	"unity": "2021.3"
+}
