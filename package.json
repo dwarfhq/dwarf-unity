@@ -1,7 +1,8 @@
 {
-	"name": "dk.dwarf.unity",
-	"version": "0.0.1",
-	"description": "This project contains a collection of shared packages for Unity",
-	"displayName": "Dwarf Unity",
-	"unity": "2021.3"
+  "name": "dk.dwarf.utilities",
+  "version": "0.1.0",
+  "description": "Commonly used utilities and design pattern implementations",
+  "displayName": "Dwarf Utilities",
+  "unity": "2021.3",
+  "hideInEditor": false
 }
