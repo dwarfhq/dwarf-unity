@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-namespace Dwarf.ScritableObjects
+namespace Dwarf.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "StringVariable", menuName = "Scriptable Objects/StringVariable")]
     public class StringVariable : ScriptableObject
