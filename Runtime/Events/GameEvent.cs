@@ -5,7 +5,7 @@ using UnityEngine.Scripting.APIUpdating;
 namespace Dwarf.Events
 {
     [CreateAssetMenu(fileName = "New Game Event", menuName = "Scriptable Objects/Game Event")]
-    [MovedFrom("Assembly-CSharp")]
+    [MovedFrom(true, sourceAssembly: "Assembly-CSharp", sourceClassName: "GameEvent")]
     public class GameEvent : ScriptableObject
     {
         private readonly List<GameEventListener> _eventListeners = new();
