@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Scripting.APIUpdating;
 
 namespace Dwarf.Events
 {
+    [MovedFrom("Assembly-CSharp")]
     public class GameEventListener : MonoBehaviour
     {
         public GameEvent eventHandler;
