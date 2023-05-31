@@ -8,16 +8,16 @@ namespace Dwarf.DesignPatterns.State
         /// <summary>
         /// Code that runs when we enter the state.
         /// </summary>
-        void Enter() { }
+        void OnEnter() { }
 
         /// <summary>
         /// Code that runs every frame while we are in the state. Should include a condition to transition to a new state.
         /// </summary>
-        void Update() { }
+        void OnUpdate() { }
 
         /// <summary>
         /// Code that runs when we exit the state.
         /// </summary>
-        void Exit() { }
+        void OnExit() { }
     }
 }

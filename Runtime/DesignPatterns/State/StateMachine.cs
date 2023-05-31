@@ -40,7 +40,7 @@ namespace Dwarf.DesignPatterns.State
         public void Initialize(IState state)
         {
             CurrentState = state;
-            state.Enter();
+            state.OnEnter();
 
             // Notify listeners that state has changed
             OnStateChanged?.Invoke(state);
@@ -52,9 +52,9 @@ namespace Dwarf.DesignPatterns.State
         /// <param name="nextState">The state to transition to</param>
         public void TransitionTo(IState nextState)
         {
-            CurrentState.Exit();
+            CurrentState.OnExit();
             CurrentState = nextState;
-            nextState.Enter();
+            nextState.OnEnter();
 
             // Notify other objects that state has changed
             OnStateChanged?.Invoke(nextState);
@@ -67,7 +67,7 @@ namespace Dwarf.DesignPatterns.State
         {
             if (CurrentState != null)
             {
-                CurrentState.Update();
+                CurrentState.OnUpdate();
             }
         }
     }
