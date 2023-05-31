@@ -3,7 +3,7 @@ namespace Dwarf.DesignPatterns.State
     /// <summary>
     /// Interface for a state in a state machine.
     /// </summary>
-    public interface IState<T>
+    public interface IState
     {
         /// <summary>
         /// Code that runs when we enter the state.
