@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dwarf.ScritableObjects
+namespace Dwarf.ScriptableObjects
 {
     public abstract class RuntimeSet<T> : ScriptableObject
     {

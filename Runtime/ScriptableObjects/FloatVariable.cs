@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Dwarf.ScritableObjects
+namespace Dwarf.ScriptableObjects
 {
 
     [CreateAssetMenu(fileName = "FloatVariable", menuName = "Scriptable Objects/FloatVariable", order = 1)]
