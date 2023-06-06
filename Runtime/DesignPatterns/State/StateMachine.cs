@@ -7,7 +7,7 @@ namespace Dwarf.DesignPatterns.State
     /// A generic state machine that can be used to control the state of an object of type T.
     /// </summary>
     [Serializable]
-    public abstract class StateMachine
+    public class StateMachine
     {
         /// <summary>
         /// The current state of the state machine.
