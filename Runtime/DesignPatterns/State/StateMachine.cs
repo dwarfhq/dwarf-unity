@@ -20,20 +20,6 @@ namespace Dwarf.DesignPatterns.State
         public event Action<IState> OnStateChanged;
 
         /// <summary>
-        /// Constructor which invokes the InitializeStates() method from the inheriting class.
-        /// </summary>
-        /// <param name="controller"></param>
-        protected StateMachine()
-        {
-            InitializeStates();
-        }
-
-        /// <summary>
-        /// Initialize the state machine by creating an instance of each possible state.
-        /// </summary>
-        protected abstract void InitializeStates();
-
-        /// <summary>
         /// Initialize the state machine with a starting state.
         /// </summary>
         /// <param name="state">The starting state</param>
