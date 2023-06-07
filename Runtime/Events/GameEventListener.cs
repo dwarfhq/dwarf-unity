@@ -1,37 +1,38 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Serialization;
 
 namespace Dwarf.Events
 {
-    [MovedFrom(true, sourceAssembly: "Assembly-CSharp", sourceClassName: "GameEventListener")]
     public class GameEventListener : MonoBehaviour
     {
-        public GameEvent eventHandler;
-        public UnityEvent<int?> onEventRaised; // TODO: Figure out if we need the optional parameter here. It was great for bersærk, but maybe we need something else for other events?
+        [SerializeField, FormerlySerializedAs("eventHandler")]
+        GameEvent _eventHandler;
+        [SerializeField, FormerlySerializedAs("onEventRaised")]
+        UnityEvent<int?> _onEventRaised; // TODO: Figure out if we need the optional parameter here. It was great for bersærk, but maybe we need something else for other events?
 
         private void OnEnable()
         {
             // Register this event listener to the event handler
-            if (eventHandler != null)
+            if (_eventHandler != null)
             {
-                eventHandler.RegisterListener(this);
+                _eventHandler.RegisterListener(this);
             }
         }
 
         private void OnDisable()
         {
             // Unregister this event listener from the event handler
-            if (eventHandler != null)
+            if (_eventHandler != null)
             {
-                eventHandler.UnregisterListener(this);
+                _eventHandler.UnregisterListener(this);
             }
         }
 
         public void OnEventRaised(int? playerId = null)
         {
             // Invoke the UnityEvent when the event is raised
-            onEventRaised.Invoke(playerId);
+            _onEventRaised.Invoke(playerId);
         }
     }
 }

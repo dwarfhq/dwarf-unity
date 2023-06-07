@@ -5,7 +5,7 @@ namespace Dwarf.ScriptableObjects
 {
     public abstract class RuntimeSet<T> : ScriptableObject
     {
-        public List<T> Values = new List<T>();
+        public List<T> Values = new();
 
         public void Add(T t)
         {

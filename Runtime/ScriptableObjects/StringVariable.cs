@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-
+using UnityEngine.Serialization;
 
 namespace Dwarf.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "StringVariable", menuName = "Scriptable Objects/StringVariable")]
     public class StringVariable : ScriptableObject
     {
-        public string value;
+        [FormerlySerializedAs("value")]
+        public string Value;
     }
 }

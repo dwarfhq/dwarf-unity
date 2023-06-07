@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Dwarf.Utilities
 {
@@ -35,8 +36,10 @@ namespace Dwarf.Utilities
     {
         [Header("Filter")]
         [SerializeField]
-        [Tooltip("Only GameObjects with these tags will trigger the collider events")]
-        List<string> tags = new List<string>();
+        [Tooltip("Only GameObjects with these tags will trigger the collider events"), FormerlySerializedAs("tags ")]
+        List<string> _tags = new();
+        [SerializeField, FormerlySerializedAs("Conditions")]
+        ConditionBase[] _conditions;
 
         /// <summary>
         /// Check whether a given tag is allowed through the filter
@@ -45,9 +48,15 @@ namespace Dwarf.Utilities
         /// <returns><example>true</example>, if the tag is allowed. Otherwise, <example>false</example></returns>
         protected bool IsFiltered(string tag)
         {
-            if (tags == null || tags.Count == 0) return true;
-            if (tags.Contains(tag)) return true;
-            return false;
+            for (int i = 0; i < _conditions.Length; i++)
+            {
+                if (!_conditions[i].IsSatisfied)
+                {
+                    return false;
+                }
+            }
+
+            return _tags.Count == 0 || _tags.Contains(tag);
         }
     }
 }

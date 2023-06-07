@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Serialization;
 
 namespace Dwarf.ScriptableObjects
 {
@@ -7,6 +8,7 @@ namespace Dwarf.ScriptableObjects
     [MovedFrom("Assembly-CSharp")]
     public class BoolVariable : ScriptableObject
     {
-        public bool value;
+        [FormerlySerializedAs("value")]
+        public bool Value;
     }
 }

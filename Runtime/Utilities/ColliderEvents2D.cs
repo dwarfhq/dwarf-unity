@@ -7,7 +7,6 @@ namespace Dwarf.Utilities
     /// </summary>
     public class ColliderEvents2D : ColliderEventsBase
     {
-
         [Space(10)]
         [Header("Events")]
         public TriggerEvent2D TriggerEnter;
