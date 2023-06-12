@@ -3,17 +3,17 @@ using UnityEngine;
 
 namespace Dwarf.Utilities.Extensions
 {
-    public static class IEnumerableExtensions
+    public static class ArrayExtensions
     {
         /// <summary>
         /// Shuffle an array in place using the Fisher-Yates algorithm
         /// </summary>
         /// <param name="array"></param>
         /// <typeparam name="T"></typeparam>
-        public static void Shuffle<T>(this IList<T> array)
+        public static void Shuffle<T>(this T[] array)
         {
             // Loop through the array from the end to the beginning
-            for (int i = array.Count - 1; i > 0; i--)
+            for (int i = array.Length - 1; i > 0; i--)
             {
                 // Generate a random index between 0 and i (inclusive)
                 int j = Random.Range(0, i + 1);
