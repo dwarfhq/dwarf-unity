@@ -1,6 +1,6 @@
 {
   "name": "dk.dwarf.utilities",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "Commonly used utilities and design pattern implementations",
   "displayName": "Dwarf Utilities",
   "unity": "2021.3",
