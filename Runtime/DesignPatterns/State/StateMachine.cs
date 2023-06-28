@@ -38,7 +38,7 @@ namespace Dwarf.DesignPatterns.State
         /// <param name="nextState">The state to transition to</param>
         public void TransitionTo(IState nextState)
         {
-            CurrentState.OnExit();
+            CurrentState?.OnExit();
             CurrentState = nextState;
             nextState.OnEnter();
 
