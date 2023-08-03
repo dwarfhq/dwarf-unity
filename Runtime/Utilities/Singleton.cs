@@ -20,7 +20,7 @@ namespace Dwarf.Utilities
                 if (_instance == null)
                 {
                     // If the instance is null, try to find an object of type T in the scene
-                    _instance = GameObject.FindObjectOfType<T>();
+                    _instance = FindObjectOfType<T>();
 
                     if (_instance == null)
                     {
@@ -34,12 +34,16 @@ namespace Dwarf.Utilities
             }
         }
 
+        [Header("Singleton Settings"), Tooltip("Defines if the Singleton should persist between scenes")]
+        protected bool IsPersistent = true;
+
         public virtual void Awake()
         {
             if (_instance == null)
             {
                 _instance = this as T;
-                DontDestroyOnLoad(gameObject);
+                if (IsPersistent)
+                    DontDestroyOnLoad(gameObject);
             }
             else
             {
