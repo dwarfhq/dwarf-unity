@@ -1,18 +1,22 @@
 using System;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace Dwarf.DesignPatterns.State
 {
+    /// <inheritdoc/>
+    public class StateMachine : StateMachine<IState>
+    {
+    }
     /// <summary>
     /// A generic state machine that can be used to control the state of an object of type T.
     /// </summary>
     [Serializable]
-    public class StateMachine
+    public class StateMachine<T>
+        where T : IState
     {
         /// <summary>
         /// The current state of the state machine.
         /// </summary>
-        public IState CurrentState { get; private set; }
+        public T CurrentState { get; private set; }
 
         /// <summary>
         /// Event that is invoked when the state changes.
@@ -23,7 +27,7 @@ namespace Dwarf.DesignPatterns.State
         /// Initialize the state machine with a starting state.
         /// </summary>
         /// <param name="state">The starting state</param>
-        public void Initialize(IState state)
+        public void Initialize(T state)
         {
             CurrentState = state;
             state.OnEnter();
@@ -36,7 +40,7 @@ namespace Dwarf.DesignPatterns.State
         /// Transition to a new state by calling Exit() on the current state and Enter() on the next state.
         /// </summary>
         /// <param name="nextState">The state to transition to</param>
-        public void TransitionTo(IState nextState)
+        public void TransitionTo(T nextState)
         {
             CurrentState?.OnExit();
             CurrentState = nextState;
