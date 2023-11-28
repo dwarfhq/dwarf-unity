@@ -7,6 +7,8 @@ public class SpringUtilsWrapper
     private readonly SpringUtils.DampedSpringMotionParams _springParams;
     float _currentVelocity;
 
+    public float CurrentVelocity => _currentVelocity;
+
     public SpringUtilsWrapper()
     {
         _springParams = new SpringUtils.DampedSpringMotionParams();
