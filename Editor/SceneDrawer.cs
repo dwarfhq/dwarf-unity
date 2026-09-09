@@ -42,7 +42,7 @@ public class SceneDrawer : PropertyDrawer
 
         foreach (var editorScene in EditorBuildSettings.scenes)
         {
-            if (editorScene.path.IndexOf(sceneObjectName) != -1)
+            if (Path.GetFileNameWithoutExtension(editorScene.path) == sceneObjectName)
             {
                 return AssetDatabase.LoadAssetAtPath(editorScene.path, typeof(SceneAsset)) as SceneAsset;
             }
